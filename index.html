@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio de Herramientas de Ciberseguridad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- Título principal -->
+            <h1>Hacker Vault</h1>
+            <p>Coleccion de herramientas de código abierto para OSINT, pruebas de penetración, análisis de malware y
+                más.</p>
+
+            <!-- Contenedor de pwnVader con los íconos -->
+            <div class="header-top">
+                <span class="header-title">pwnVader</span>
+                <a href="https://github.com/pwnVader" target="_blank" class="social-icon"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jesusperezromero/" target="_blank" class="social-icon"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+
+            <!-- Contenedor de la barra de búsqueda -->
+            <div class="search-container">
+                <input type="text" id="searchInput" onkeyup="filterTools()" placeholder="Buscar herramientas..."
+                    class="search-input">
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section id="tool-list">
+        <div class="container">
+            <h2>Listado de Herramientas</h2>
+
+            <div id="no-results-message" style="display: none; text-align: center; color: #f39c12;">
+                <p>No se encontraron herramientas que coincidan con tu búsqueda.</p>
+            </div>
+
+            <!-- Categoría: OSINT -->
+            <div class="category" id="osint">
+                <h3>OSINT (Open Source Intelligence)</h3>
+                <div class="tool-card-container">
+                    <!-- TheHarvester -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/larose/theHarvester" target="_blank">TheHarvester</a></h4>
+                        <p>Herramienta para recolectar información sobre correos electrónicos, dominios y direcciones
+                            IP.</p>
+                        <p><a href="https://github.com/larose/theHarvester" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/larose/theHarvester/wiki" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Shodan -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.shodan.io/" target="_blank">Shodan</a></h4>
+                        <p>Motor de búsqueda para dispositivos conectados a internet.</p>
+                        <p><a href="https://www.shodan.io/" target="_blank">Repositorio</a> | <a
+                                href="https://www.shodan.io/learn" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- SpiderFoot -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.spiderfoot.net/" target="_blank">SpiderFoot</a></h4>
+                        <p>Plataforma automatizada de OSINT.</p>
+                        <p><a href="https://www.spiderfoot.net/" target="_blank">Repositorio</a> | <a
+                                href="https://www.spiderfoot.net/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Amass -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OWASP/Amass" target="_blank">Amass</a></h4>
+                        <p>Herramienta para descubrir información sobre subdominios y activos.</p>
+                        <p><a href="https://github.com/OWASP/Amass" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/OWASP/Amass/wiki" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Maltego -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.paterva.com/web7/" target="_blank">Maltego</a></h4>
+                        <p>Herramienta de recopilación y visualización de información.</p>
+                        <p><a href="https://www.paterva.com/web7/" target="_blank">Repositorio</a> | <a
+                                href="https://www.paterva.com/web7/documentation" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Recon-ng -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/lanmaster53/recon-ng" target="_blank">Recon-ng</a></h4>
+                        <p>Framework de OSINT para realizar pruebas de reconocimiento.</p>
+                        <p><a href="https://github.com/lanmaster53/recon-ng" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/lanmaster53/recon-ng/wiki" target="_blank">Documentación</a>
+                        </p>
+                    </div>
+                    <!-- DNSdumpster -->
+                    <div class="tool-card">
+                        <h4><a href="https://dnsdumpster.com/" target="_blank">DNSdumpster</a></h4>
+                        <p>Herramienta para obtener información sobre la infraestructura de dominios.</p>
+                        <p><a href="https://dnsdumpster.com/" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/opsdisk/dnsdumpster" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Censys -->
+                    <div class="tool-card">
+                        <h4><a href="https://censys.io/" target="_blank">Censys</a></h4>
+                        <p>Motor de búsqueda para encontrar información sobre dispositivos y servicios en internet.</p>
+                        <p><a href="https://censys.io/" target="_blank">Repositorio</a> | <a
+                                href="https://censys.io/learn" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OSINT Framework -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/lockfale/osint-framework" target="_blank">OSINT Framework</a>
+                        </h4>
+                        <p>Framework que proporciona un catálogo de herramientas y recursos para OSINT.</p>
+                        <p><a href="https://github.com/lockfale/osint-framework" target="_blank">Repositorio</a> | <a
+                                href="https://osintframework.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Intelligence X -->
+                    <div class="tool-card">
+                        <h4><a href="https://intelx.io/" target="_blank">Intelligence X</a></h4>
+                        <p>Motor de búsqueda especializado en OSINT que permite realizar búsquedas en diversas bases de
+                            datos de inteligencia.</p>
+                        <p><a href="https://intelx.io/" target="_blank">Repositorio</a> | <a
+                                href="https://intelx.io/docs" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Have I Been Pwned -->
+                    <div class="tool-card">
+                        <h4><a href="https://haveibeenpwned.com/" target="_blank">Have I Been Pwned</a></h4>
+                        <p>Base de datos con registros de filtraciones de contraseñas y datos personales.</p>
+                        <p><a href="https://haveibeenpwned.com/" target="_blank">Repositorio</a> | <a
+                                href="https://haveibeenpwned.com/API" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Social-Engineer Toolkit (SET) -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/trustedsec/social-engineer-toolkit"
+                                target="_blank">Social-Engineer Toolkit (SET)</a></h4>
+                        <p>Framework de ingeniería social para automatizar ataques y la recopilación de información.</p>
+                        <p><a href="https://github.com/trustedsec/social-engineer-toolkit"
+                                target="_blank">Repositorio</a> | <a
+                                href="https://github.com/trustedsec/social-engineer-toolkit/wiki"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Google Dorks -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/JohnHammond/google-dorks" target="_blank">Google Dorks</a></h4>
+                        <p>Técnicas de búsqueda avanzada en Google para encontrar información sensible en la web.</p>
+                        <p><a href="https://github.com/JohnHammond/google-dorks" target="_blank">Repositorio</a> | <a
+                                href="https://www.exploit-db.com/google-hacking-database"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Wayback Machine (Internet Archive) -->
+                    <div class="tool-card">
+                        <h4><a href="https://archive.org/web/" target="_blank">Wayback Machine</a></h4>
+                        <p>Permite acceder a las versiones anteriores de páginas web archivadas en internet.</p>
+                        <p><a href="https://archive.org/web/" target="_blank">Repositorio</a> | <a
+                                href="https://archive.org/services/" target="_blank">Documentación</a></p>
+                    </div>
+
+                    <button class="show-more-btn show-more" onclick="toggleTools('osint')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Pruebas de Penetración -->
+            <div class="category" id="pentest">
+                <h3>Pentesting</h3>
+                <div class="tool-card-container">
+                    <!-- Kali Linux -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.kali.org/" target="_blank">Kali Linux</a></h4>
+                        <p>Distribución de Linux especializada en pruebas de penetración, con cientos de herramientas
+                            preinstaladas.</p>
+                        <p><a href="https://www.kali.org/" target="_blank">Repositorio</a> | <a
+                                href="https://www.kali.org/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Metasploit Framework -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.metasploit.com/" target="_blank">Metasploit Framework</a></h4>
+                        <p>Plataforma para desarrollar y ejecutar exploits en pruebas de penetración.</p>
+                        <p><a href="https://www.metasploit.com/" target="_blank">Repositorio</a> | <a
+                                href="https://docs.metasploit.com/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Burp Suite -->
+                    <div class="tool-card">
+                        <h4><a href="https://portswigger.net/burp" target="_blank">Burp Suite</a></h4>
+                        <p>Herramienta para realizar pruebas de seguridad en aplicaciones web.</p>
+                        <p><a href="https://portswigger.net/burp" target="_blank">Repositorio</a> | <a
+                                href="https://portswigger.net/burp/documentation" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Nmap -->
+                    <div class="tool-card">
+                        <h4><a href="https://nmap.org/" target="_blank">Nmap</a></h4>
+                        <p>Escáner de redes para descubrir dispositivos, servicios y vulnerabilidades en la red.</p>
+                        <p><a href="https://nmap.org/" target="_blank">Repositorio</a> | <a
+                                href="https://nmap.org/book/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Wireshark -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.wireshark.org/" target="_blank">Wireshark</a></h4>
+                        <p>Analizador de protocolos de red para capturar y examinar datos en tiempo real.</p>
+                        <p><a href="https://www.wireshark.org/" target="_blank">Repositorio</a> | <a
+                                href="https://www.wireshark.org/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Nikto -->
+                    <div class="tool-card">
+                        <h4><a href="https://cirt.net/Nikto2" target="_blank">Nikto</a></h4>
+                        <p>Escáner de vulnerabilidades web, que encuentra posibles fallas en servidores web.</p>
+                        <p><a href="https://cirt.net/Nikto2" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/sullo/nikto/blob/master/docs/nikto.pdf"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Aircrack-ng -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.aircrack-ng.org/" target="_blank">Aircrack-ng</a></h4>
+                        <p>Herramienta para auditoría de redes Wi-Fi, incluyendo ataques de fuerza bruta en contraseñas.
+                        </p>
+                        <p><a href="https://www.aircrack-ng.org/" target="_blank">Repositorio</a> | <a
+                                href="https://www.aircrack-ng.org/doku.php" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Hydra -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Hydra</a></h4>
+                        <p>Herramienta para realizar ataques de fuerza bruta en múltiples protocolos de red.</p>
+                        <p><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/vanhauser-thc/thc-hydra/wiki" target="_blank">Documentación</a>
+                        </p>
+                    </div>
+                    <!-- John the Ripper -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.openwall.com/john/" target="_blank">John the Ripper</a></h4>
+                        <p>Herramienta para crackear contraseñas utilizando diccionarios y técnicas de fuerza bruta.</p>
+                        <p><a href="https://www.openwall.com/john/" target="_blank">Repositorio</a> | <a
+                                href="https://www.openwall.com/john/doc/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- SQLmap -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/sqlmapproject/sqlmap" target="_blank">SQLmap</a></h4>
+                        <p>Automatiza la detección y explotación de vulnerabilidades de inyección SQL en aplicaciones
+                            web.</p>
+                        <p><a href="https://github.com/sqlmapproject/sqlmap" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/sqlmapproject/sqlmap/wiki" target="_blank">Documentación</a>
+                        </p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-pentest" onclick="toggleTools('pentest')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Redes Privadas Virtuales (VPNs) -->
+            <div class="category" id="vpn">
+                <h3>Redes Privadas Virtuales (VPNs)</h3>
+                <div class="tool-card-container">
+                    <!-- OpenVPN -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OpenVPN/openvpn" target="_blank">OpenVPN</a></h4>
+                        <p>Solución de VPN de código abierto para crear conexiones seguras entre dispositivos a través
+                            de internet.</p>
+                        <p><a href="https://github.com/OpenVPN/openvpn" target="_blank">Repositorio</a> | <a
+                                href="https://openvpn.net/community-resources/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- WireGuard -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/WireGuard" target="_blank">WireGuard</a></h4>
+                        <p>VPN moderna y rápida que utiliza criptografía de última generación para ofrecer seguridad y
+                            simplicidad.</p>
+                        <p><a href="https://github.com/WireGuard" target="_blank">Repositorio</a> | <a
+                                href="https://www.wireguard.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- StrongSwan -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/strongswan/strongswan" target="_blank">StrongSwan</a></h4>
+                        <p>Solución VPN basada en IKEv2/IPsec, ideal para la implementación de túneles VPN seguros en
+                            entornos corporativos.</p>
+                        <p><a href="https://github.com/strongswan/strongswan" target="_blank">Repositorio</a> | <a
+                                href="https://wiki.strongswan.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- SoftEther VPN -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/SoftEtherVPN/SoftEtherVPN" target="_blank">SoftEther VPN</a>
+                        </h4>
+                        <p>Solución VPN de código abierto que soporta múltiples protocolos y permite crear conexiones
+                            seguras entre dispositivos.</p>
+                        <p><a href="https://github.com/SoftEtherVPN/SoftEtherVPN" target="_blank">Repositorio</a> | <a
+                                href="https://www.softether.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OpenConnect -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/openconnect/openconnect" target="_blank">OpenConnect</a></h4>
+                        <p>Herramienta de código abierto para conectarse a redes VPN que soporta varios protocolos como
+                            AnyConnect de Cisco.</p>
+                        <p><a href="https://github.com/openconnect/openconnect" target="_blank">Repositorio</a> | <a
+                                href="https://www.infradead.org/openconnect/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Tunnelblick -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/Tunnelblick/Tunnelblick" target="_blank">Tunnelblick</a></h4>
+                        <p>Cliente VPN de código abierto para macOS que utiliza el protocolo OpenVPN para crear
+                            conexiones seguras.</p>
+                        <p><a href="https://github.com/Tunnelblick/Tunnelblick" target="_blank">Repositorio</a> | <a
+                                href="https://tunnelblick.net/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- VyOS -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/vyos/vyos" target="_blank">VyOS</a></h4>
+                        <p>Sistema operativo basado en Linux para la creación de soluciones de red, incluyendo
+                            configuraciones de VPNs.</p>
+                        <p><a href="https://github.com/vyos/vyos" target="_blank">Repositorio</a> | <a
+                                href="https://vyos.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Cisco AnyConnect -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client/index.html"
+                                target="_blank">Cisco AnyConnect</a></h4>
+                        <p>Solución empresarial de VPN de Cisco, que permite la conexión segura a redes corporativas
+                            desde cualquier lugar.</p>
+                        <p><a href="https://www.cisco.com/c/en/us/products/security/anyconnect-secure-mobility-client/index.html"
+                                target="_blank">Repositorio</a> | <a
+                                href="https://www.cisco.com/c/en/us/td/docs/security/anyconnect/anyconnect-vpn/"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- NordVPN -->
+                    <div class="tool-card">
+                        <h4><a href="https://nordvpn.com/" target="_blank">NordVPN</a></h4>
+                        <p>Servicio VPN comercial que ofrece conexiones rápidas y seguras, con una interfaz fácil de
+                            usar.</p>
+                        <p><a href="https://nordvpn.com/" target="_blank">Repositorio</a> | <a
+                                href="https://support.nordvpn.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- ProtonVPN -->
+                    <div class="tool-card">
+                        <h4><a href="https://protonvpn.com/" target="_blank">ProtonVPN</a></h4>
+                        <p>Servicio VPN que protege la privacidad de los usuarios mediante conexiones seguras y
+                            cifradas.</p>
+                        <p><a href="https://protonvpn.com/" target="_blank">Repositorio</a> | <a
+                                href="https://protonvpn.com/support/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Pritunl -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/pritunl/pritunl" target="_blank">Pritunl</a></h4>
+                        <p>Solución VPN de código abierto que permite configurar y gestionar servidores VPN en una red
+                            empresarial.</p>
+                        <p><a href="https://github.com/pritunl/pritunl" target="_blank">Repositorio</a> | <a
+                                href="https://docs.pritunl.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- LibreSwan -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/libreswan/libreswan" target="_blank">LibreSwan</a></h4>
+                        <p>Implementación de IPsec para Linux, que permite crear VPNs seguras utilizando el protocolo
+                            IPsec.</p>
+                        <p><a href="https://github.com/libreswan/libreswan" target="_blank">Repositorio</a> | <a
+                                href="https://libreswan.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-vpn" onclick="toggleTools('vpn')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Análisis de Malware -->
+            <div class="category" id="malware">
+                <h3>Análisis de Malware</h3>
+                <div class="tool-card-container">
+                    <!-- Cuckoo Sandbox -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/cuckoosandbox/cuckoo" target="_blank">Cuckoo Sandbox</a></h4>
+                        <p>Plataforma automatizada de análisis de malware, ejecuta y observa el comportamiento de
+                            archivos y URLs maliciosas.</p>
+                        <p><a href="https://github.com/cuckoosandbox/cuckoo" target="_blank">Repositorio</a> | <a
+                                href="https://cuckoosandbox.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- YARA -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/VirusTotal/yara" target="_blank">YARA</a></h4>
+                        <p>Herramienta para la identificación y clasificación de malware mediante la definición de
+                            patrones.</p>
+                        <p><a href="https://github.com/VirusTotal/yara" target="_blank">Repositorio</a> | <a
+                                href="https://yara.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- VirusTotal -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.virustotal.com/" target="_blank">VirusTotal</a></h4>
+                        <p>Servicio de análisis de archivos y URLs con múltiples motores de antivirus para detectar
+                            malware.</p>
+                        <p><a href="https://www.virustotal.com/" target="_blank">Repositorio</a> | <a
+                                href="https://developers.virustotal.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- REMnux -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/REMnux" target="_blank">REMnux</a></h4>
+                        <p>Conjunto de herramientas para análisis de malware, especialmente para sistemas Linux.</p>
+                        <p><a href="https://github.com/REMnux" target="_blank">Repositorio</a> | <a
+                                href="https://REMnux.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- PEStudio -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/AndyScherer/PEStudio" target="_blank">PEStudio</a></h4>
+                        <p>Herramienta para analizar archivos binarios de Windows (PE) sin necesidad de ejecutarlos.</p>
+                        <p><a href="https://github.com/AndyScherer/PEStudio" target="_blank">Repositorio</a> | <a
+                                href="https://www.winitor.com/peStudio/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OllyDbg -->
+                    <div class="tool-card">
+                        <h4><a href="http://www.ollydbg.de/" target="_blank">OllyDbg</a></h4>
+                        <p>Depurador de código binario para realizar análisis dinámico de ejecutables.</p>
+                        <p><a href="http://www.ollydbg.de/" target="_blank">Repositorio</a> | <a
+                                href="https://www.ollydbg.de/documentation.html" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Sandstorm -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/sandstorm-io/sandstorm" target="_blank">Sandstorm</a></h4>
+                        <p>Plataforma de análisis de malware basada en la nube que realiza análisis dinámico de
+                            ejecutables.</p>
+                        <p><a href="https://github.com/sandstorm-io/sandstorm" target="_blank">Repositorio</a> | <a
+                                href="https://docs.sandstorm.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- PE-bear -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/hasherezade/pe-bear" target="_blank">PE-bear</a></h4>
+                        <p>Herramienta de ingeniería inversa para archivos PE de Windows.</p>
+                        <p><a href="https://github.com/hasherezade/pe-bear" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/hasherezade/pe-bear" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Volatility -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/volatilityfoundation/volatility" target="_blank">Volatility</a>
+                        </h4>
+                        <p>Framework de análisis de memoria para detectar malware y realizar análisis forense en la
+                            memoria RAM.</p>
+                        <p><a href="https://github.com/volatilityfoundation/volatility" target="_blank">Repositorio</a>
+                            | <a href="https://volatility.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- IDA Pro -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.hex-rays.com/products/ida/" target="_blank">IDA Pro</a></h4>
+                        <p>Desensamblador y depurador avanzado utilizado en la ingeniería inversa de ejecutables.</p>
+                        <p><a href="https://www.hex-rays.com/products/ida/" target="_blank">Repositorio</a> | <a
+                                href="https://www.hex-rays.com/products/ida/support/" target="_blank">Documentación</a>
+                        </p>
+                    </div>
+                    <!-- x64dbg -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/x64dbg/x64dbg" target="_blank">x64dbg</a></h4>
+                        <p>Depurador de código de 32 y 64 bits para realizar análisis de malware en sistemas Windows.
+                        </p>
+                        <p><a href="https://github.com/x64dbg/x64dbg" target="_blank">Repositorio</a> | <a
+                                href="https://x64dbg.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- CFF Explorer -->
+                    <div class="tool-card">
+                        <h4><a href="http://www.ntcore.com/exsuite.php" target="_blank">CFF Explorer</a></h4>
+                        <p>Herramienta para analizar y modificar archivos PE de Windows.</p>
+                        <p><a href="http://www.ntcore.com/exsuite.php" target="_blank">Repositorio</a> | <a
+                                href="https://www.ntcore.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-malware" onclick="toggleTools('malware')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: IDS/IPS (Sistemas de Detección y Prevención de Intrusiones) -->
+            <div class="category" id="idsips">
+                <h3>IDS/IPS (Sistemas de Detección y Prevención de Intrusiones)</h3>
+                <div class="tool-card-container">
+                    <!-- Snort -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/snort3/snort" target="_blank">Snort</a></h4>
+                        <p>Sistema IDS/IPS de código abierto que permite la detección de intrusiones en redes y la
+                            prevención de ataques.</p>
+                        <p><a href="https://github.com/snort3/snort" target="_blank">Repositorio</a> | <a
+                                href="https://snort.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Suricata -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OISF/suricata" target="_blank">Suricata</a></h4>
+                        <p>Sistema IDS/IPS de alto rendimiento para el análisis en tiempo real de tráfico de red.</p>
+                        <p><a href="https://github.com/OISF/suricata" target="_blank">Repositorio</a> | <a
+                                href="https://suricata.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Zeek (Bro) -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/zeek/zeek" target="_blank">Zeek (Bro)</a></h4>
+                        <p>Herramienta para monitorear y analizar el tráfico de red en busca de intrusiones y
+                            comportamientos maliciosos.</p>
+                        <p><a href="https://github.com/zeek/zeek" target="_blank">Repositorio</a> | <a
+                                href="https://docs.zeek.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OSSEC -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/ossec/ossec-hids" target="_blank">OSSEC</a></h4>
+                        <p>Sistema de detección de intrusiones basado en host (HIDS), utilizado para monitorear y
+                            alertar sobre anomalías.</p>
+                        <p><a href="https://github.com/ossec/ossec-hids" target="_blank">Repositorio</a> | <a
+                                href="https://www.ossec.net/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Security Onion -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/Security-Onion-Solutions/securityonion" target="_blank">Security
+                                Onion</a></h4>
+                        <p>Plataforma de seguridad que incluye IDS/IPS y herramientas para análisis de tráfico y
+                            detección de intrusiones.</p>
+                        <p><a href="https://github.com/Security-Onion-Solutions/securityonion"
+                                target="_blank">Repositorio</a> | <a href="https://securityonion.readthedocs.io/"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Wazuh -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/wazuh/wazuh" target="_blank">Wazuh</a></h4>
+                        <p>Sistema HIDS con capacidades de análisis de logs y correlación de eventos de seguridad.</p>
+                        <p><a href="https://github.com/wazuh/wazuh" target="_blank">Repositorio</a> | <a
+                                href="https://documentation.wazuh.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Suricata-IDS -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OISF/suricata" target="_blank">Suricata-IDS</a></h4>
+                        <p>Herramienta de análisis en tiempo real de tráfico de red, permite la captura y la detección
+                            de intrusiones.</p>
+                        <p><a href="https://github.com/OISF/suricata" target="_blank">Repositorio</a> | <a
+                                href="https://suricata.readthedocs.io/en/suricata-5.0.3/"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- SnortSam -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/inliniac/snortsam" target="_blank">SnortSam</a></h4>
+                        <p>Herramienta para integrar Snort con firewalls y routers para bloquear ataques
+                            automáticamente.</p>
+                        <p><a href="https://github.com/inliniac/snortsam" target="_blank">Repositorio</a> | <a
+                                href="https://www.snort.org/documents" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OSSIM -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/AlienVault-OT/ossim" target="_blank">OSSIM</a></h4>
+                        <p>Sistema de gestión de información de seguridad (SIEM), que integra múltiples herramientas de
+                            seguridad, incluyendo IDS/IPS.</p>
+                        <p><a href="https://github.com/AlienVault-OT/ossim" target="_blank">Repositorio</a> | <a
+                                href="https://cybersecurity.att.com/documentation/ossim"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Prelude -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/preludeorg" target="_blank">Prelude</a></h4>
+                        <p>Framework de gestión de eventos de seguridad que actúa como un centro de operaciones de
+                            seguridad (SOC).</p>
+                        <p><a href="https://github.com/preludeorg" target="_blank">Repositorio</a> | <a
+                                href="https://www.prelude-siem.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-idsips" onclick="toggleTools('idsips')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Forense Digital -->
+            <div class="category" id="forense">
+                <h3>Forense Digital</h3>
+                <div class="tool-card-container">
+                    <!-- Autopsy -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/sleuthkit/autopsy" target="_blank">Autopsy</a></h4>
+                        <p>Herramienta forense digital que permite analizar discos duros y otros dispositivos de
+                            almacenamiento, identificar archivos eliminados, etc.</p>
+                        <p><a href="https://github.com/sleuthkit/autopsy" target="_blank">Repositorio</a> | <a
+                                href="https://www.sleuthkit.org/autopsy/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Sleuth Kit -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/sleuthkit/sleuthkit" target="_blank">Sleuth Kit</a></h4>
+                        <p>Conjunto de herramientas de análisis forense digital que permite realizar análisis de discos,
+                            imágenes de disco y particiones.</p>
+                        <p><a href="https://github.com/sleuthkit/sleuthkit" target="_blank">Repositorio</a> | <a
+                                href="https://www.sleuthkit.org/sleuthkit/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- FTK Imager -->
+                    <div class="tool-card">
+                        <h4><a href="https://accessdata.com/product-download" target="_blank">FTK Imager</a></h4>
+                        <p>Herramienta para crear imágenes forenses de discos y realizar análisis de medios.</p>
+                        <p><a href="https://accessdata.com/product-download" target="_blank">Repositorio</a> | <a
+                                href="https://www.accessdata.com/support/product-manuals"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Volatility -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/volatilityfoundation/volatility" target="_blank">Volatility</a>
+                        </h4>
+                        <p>Framework para análisis de memoria forense y detección de malware en la memoria RAM.</p>
+                        <p><a href="https://github.com/volatilityfoundation/volatility" target="_blank">Repositorio</a>
+                            | <a href="https://volatility.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- X1 Social Discovery -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.x1.com/products/social-discovery/" target="_blank">X1 Social
+                                Discovery</a></h4>
+                        <p>Herramienta de análisis forense de redes sociales para obtener datos completos de perfiles y
+                            publicaciones.</p>
+                        <p><a href="https://www.x1.com/products/social-discovery/" target="_blank">Repositorio</a> | <a
+                                href="https://www.x1.com/docs/social-discovery/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Rekall -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/google/rekall" target="_blank">Rekall</a></h4>
+                        <p>Framework forense de análisis de memoria, para realizar investigaciones sobre la memoria
+                            volátil de un sistema.</p>
+                        <p><a href="https://github.com/google/rekall" target="_blank">Repositorio</a> | <a
+                                href="https://www.rekall-forensic.com/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Xplico -->
+                    <div class="tool-card">
+                        <h4><a href="http://www.xplico.org/" target="_blank">Xplico</a></h4>
+                        <p>Herramienta forense para extraer y analizar tráfico de red.</p>
+                        <p><a href="http://www.xplico.org/" target="_blank">Repositorio</a> | <a
+                                href="http://www.xplico.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Hashcat -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/hashcat/hashcat" target="_blank">Hashcat</a></h4>
+                        <p>Herramienta para crackear contraseñas utilizando técnicas avanzadas de fuerza bruta y ataques
+                            por diccionario.</p>
+                        <p><a href="https://github.com/hashcat/hashcat" target="_blank">Repositorio</a> | <a
+                                href="https://hashcat.net/wiki/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Binwalk -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/ReFirmLabs/binwalk" target="_blank">Binwalk</a></h4>
+                        <p>Herramienta para el análisis de archivos binarios y la extracción de datos ocultos en
+                            firmware y otros archivos binarios.</p>
+                        <p><a href="https://github.com/ReFirmLabs/binwalk" target="_blank">Repositorio</a> | <a
+                                href="https://github.com/ReFirmLabs/binwalk/wiki" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Plaso -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/log2timeline/plaso" target="_blank">Plaso (log2timeline)</a>
+                        </h4>
+                        <p>Herramienta para crear líneas de tiempo forenses a partir de logs y realizar análisis de
+                            eventos.</p>
+                        <p><a href="https://github.com/log2timeline/plaso" target="_blank">Repositorio</a> | <a
+                                href="https://plaso.readthedocs.io/en/latest/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- EnCase -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.guidancesoftware.com/" target="_blank">EnCase</a></h4>
+                        <p>Herramienta forense utilizada para recopilar, analizar y preservar pruebas digitales.</p>
+                        <p><a href="https://www.guidancesoftware.com/" target="_blank">Repositorio</a> | <a
+                                href="https://www.guidancesoftware.com/support/product-manuals"
+                                target="_blank">Documentación</a></p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-forense" onclick="toggleTools('forense')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Firewall y Seguridad de Redes -->
+            <div class="category" id="firewall">
+                <h3>Firewall y Seguridad de Redes</h3>
+                <div class="tool-card-container">
+                    <!-- pfSense -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/pfsense/pfsense" target="_blank">pfSense</a></h4>
+                        <p>Firewall y sistema de protección de redes basado en FreeBSD, con VPN y filtrado de tráfico.
+                        </p>
+                        <p><a href="https://github.com/pfsense/pfsense" target="_blank">Repositorio</a> | <a
+                                href="https://docs.netgate.com/pfsense/en/latest/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- UFW -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/guardicore/ufw" target="_blank">UFW (Uncomplicated Firewall)</a>
+                        </h4>
+                        <p>Firewall fácil de usar para sistemas basados en Linux, basado en `iptables`.</p>
+                        <p><a href="https://github.com/guardicore/ufw" target="_blank">Repositorio</a> | <a
+                                href="https://help.ubuntu.com/community/UFW" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- iptables -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/axinap/iptables" target="_blank">iptables</a></h4>
+                        <p>Herramienta de filtrado de paquetes y firewall para sistemas Linux.</p>
+                        <p><a href="https://github.com/axinap/iptables" target="_blank">Repositorio</a> | <a
+                                href="https://linux.die.net/man/8/iptables" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OpenVPN -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OpenVPN/openvpn" target="_blank">OpenVPN</a></h4>
+                        <p>Software de VPN que permite crear conexiones seguras entre dispositivos a través de internet.
+                        </p>
+                        <p><a href="https://github.com/OpenVPN/openvpn" target="_blank">Repositorio</a> | <a
+                                href="https://openvpn.net/community-resources/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- WireGuard -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/WireGuard" target="_blank">WireGuard</a></h4>
+                        <p>VPN moderna, rápida y segura con fácil configuración y robustez.</p>
+                        <p><a href="https://github.com/WireGuard" target="_blank">Repositorio</a> | <a
+                                href="https://www.wireguard.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Suricata -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/OISF/suricata" target="_blank">Suricata</a></h4>
+                        <p>Sistema IDS/IPS de alto rendimiento para detectar intrusiones y analizar el tráfico de red en
+                            tiempo real.</p>
+                        <p><a href="https://github.com/OISF/suricata" target="_blank">Repositorio</a> | <a
+                                href="https://suricata.readthedocs.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- ipset -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/axil/ipset" target="_blank">ipset</a></h4>
+                        <p>Herramienta para gestionar listas de direcciones IP y realizar operaciones de filtrado de
+                            paquetes basadas en esas listas.</p>
+                        <p><a href="https://github.com/axil/ipset" target="_blank">Repositorio</a> | <a
+                                href="https://ipset.netfilter.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- nmap -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/nmap/nmap" target="_blank">nmap</a></h4>
+                        <p>Herramienta de escaneo de redes para descubrir dispositivos, puertos abiertos y
+                            vulnerabilidades en la red.</p>
+                        <p><a href="https://github.com/nmap/nmap" target="_blank">Repositorio</a> | <a
+                                href="https://nmap.org/book/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Nessus -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.tenable.com/products/nessus" target="_blank">Nessus</a></h4>
+                        <p>Escáner de vulnerabilidades que detecta fallas de seguridad en sistemas y aplicaciones.</p>
+                        <p><a href="https://www.tenable.com/products/nessus" target="_blank">Repositorio</a> | <a
+                                href="https://docs.tenable.com/nessus/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Snort -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/snort3/snort" target="_blank">Snort</a></h4>
+                        <p>Sistema IDS/IPS basado en firmas para detectar intrusiones y comportamientos maliciosos en
+                            redes.</ </div>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-firewall" onclick="toggleTools('firewall')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Gestión de Contraseñas y Autenticación -->
+            <div class="category" id="passwd">
+                <h3>Gestión de Contraseñas y Autenticación</h3>
+                <div class="tool-card-container">
+                    <!-- Hashcat -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/hashcat/hashcat" target="_blank">Hashcat</a></h4>
+                        <p>Herramienta para crackear contraseñas utilizando ataques avanzados de fuerza bruta y
+                            diccionario.</p>
+                        <p><a href="https://github.com/hashcat/hashcat" target="_blank">Repositorio</a> | <a
+                                href="https://hashcat.net/wiki/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- KeePass -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/dlech/KeePass" target="_blank">KeePass</a></h4>
+                        <p>Gestor de contraseñas de código abierto para almacenar contraseñas de forma segura y
+                            encriptada.</p>
+                        <p><a href="https://github.com/dlech/KeePass" target="_blank">Repositorio</a> | <a
+                                href="https://keepass.info/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- LastPass -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.lastpass.com/" target="_blank">LastPass</a></h4>
+                        <p>Gestor de contraseñas basado en la web con autenticación multifactor (MFA) y almacenamiento
+                            seguro de contraseñas.</p>
+                        <p><a href="https://www.lastpass.com/" target="_blank">Repositorio</a> | <a
+                                href="https://support.lastpass.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- 1Password -->
+                    <div class="tool-card">
+                        <h4><a href="https://1password.com/" target="_blank">1Password</a></h4>
+                        <p>Gestor de contraseñas con capacidades de almacenamiento seguro y autenticación multifactor
+                            (MFA).</p>
+                        <p><a href="https://1password.com/" target="_blank">Repositorio</a> | <a
+                                href="https://support.1password.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Duo Security -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.duo.com/" target="_blank">Duo Security</a></h4>
+                        <p>Solución de autenticación multifactor (MFA) para proteger cuentas mediante un segundo factor
+                            de autenticación.</p>
+                        <p><a href="https://www.duo.com/" target="_blank">Repositorio</a> | <a
+                                href="https://duo.com/docs" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Okta -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.okta.com/" target="_blank">Okta</a></h4>
+                        <p>Plataforma de gestión de identidades y acceso (IAM) con autenticación multifactor y
+                            protección avanzada de accesos.</p>
+                        <p><a href="https://www.okta.com/" target="_blank">Repositorio</a> | <a
+                                href="https://developer.okta.com/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Bitwarden -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/bitwarden" target="_blank">Bitwarden</a></h4>
+                        <p>Gestor de contraseñas de código abierto con almacenamiento seguro y capacidades de compartir
+                            contraseñas.</p>
+                        <p><a href="https://github.com/bitwarden" target="_blank">Repositorio</a> | <a
+                                href="https://bitwarden.com/help/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- TOTP -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/google/google-authenticator" target="_blank">TOTP</a></h4>
+                        <p>Generador de contraseñas de un solo uso basadas en el tiempo, utilizado para MFA.</p>
+                        <p><a href="https://github.com/google/google-authenticator" target="_blank">Repositorio</a> | <a
+                                href="https://tools.ietf.org/html/rfc6238" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- YubiKey -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/Yubico" target="_blank">YubiKey</a></h4>
+                        <p>Dispositivo de autenticación multifactor (MFA) que permite la autenticación física mediante
+                            un token USB o NFC.</p>
+                        <p><a href="https://github.com/Yubico" target="_blank">Repositorio</a> | <a
+                                href="https://www.yubico.com/support/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- PGP -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/gpg/gnupg" target="_blank">PGP</a></h4>
+                        <p>Herramienta de cifrado de correo electrónico y de archivos que utiliza criptografía de clave
+                            pública y privada.</p>
+                        <p><a href="https://github.com/gpg/gnupg" target="_blank">Repositorio</a> | <a
+                                href="https://www.gnupg.org/documentation/" target="_blank">Documentación</a></p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-contraseñas" onclick="toggleTools('passwd')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Categoría: Contenedores y Virtualización -->
+            <div class="category" id="contenedores">
+                <h3>Contenedores y Virtualización</h3>
+                <div class="tool-card-container">
+                    <!-- Docker -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/docker" target="_blank">Docker</a></h4>
+                        <p>Plataforma para desarrollar, enviar y ejecutar aplicaciones dentro de contenedores, creando
+                            entornos aislados.</p>
+                        <p><a href="https://github.com/docker" target="_blank">Repositorio</a> | <a
+                                href="https://docs.docker.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Kubernetes -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/kubernetes/kubernetes" target="_blank">Kubernetes</a></h4>
+                        <p>Plataforma de orquestación de contenedores que automatiza la implementación, el escalado y la
+                            gestión de aplicaciones en contenedores.</p>
+                        <p><a href="https://github.com/kubernetes/kubernetes" target="_blank">Repositorio</a> | <a
+                                href="https://kubernetes.io/docs/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- VMware -->
+                    <div class="tool-card">
+                        <h4><a href="https://www.vmware.com/" target="_blank">VMware</a></h4>
+                        <p>Plataforma de virtualización que permite ejecutar múltiples sistemas operativos como máquinas
+                            virtuales (VM) en un solo hardware.</p>
+                        <p><a href="https://www.vmware.com/" target="_blank">Repositorio</a> | <a
+                                href="https://docs.vmware.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- OpenStack -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/openstack" target="_blank">OpenStack</a></h4>
+                        <p>Plataforma de código abierto para la creación y gestión de nubes públicas y privadas.</p>
+                        <p><a href="https://github.com/openstack" target="_blank">Repositorio</a> | <a
+                                href="https://docs.openstack.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Docker Compose -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/docker/compose" target="_blank">Docker Compose</a></h4>
+                        <p>Herramienta para definir y ejecutar aplicaciones Docker multi-contenedor, permitiendo la
+                            creación de entornos completos con un solo comando.</p>
+                        <p><a href="https://github.com/docker/compose" target="_blank">Repositorio</a> | <a
+                                href="https://docs.docker.com/compose/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- VirtualBox -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/oracle/virtualbox" target="_blank">VirtualBox</a></h4>
+                        <p>Software de virtualización que permite crear y gestionar máquinas virtuales en diversos
+                            sistemas operativos.</p>
+                        <p><a href="https://github.com/oracle/virtualbox" target="_blank">Repositorio</a> | <a
+                                href="https://www.virtualbox.org/manual/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- Podman -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/containers/podman" target="_blank">Podman</a></h4>
+                        <p>Herramienta de contenedores compatible con Docker, sin necesidad de un daemon para su
+                            ejecución, lo que mejora la seguridad.</p>
+                        <p><a href="https://github.com/containers/podman" target="_blank">Repositorio</a> | <a
+                                href="https://podman.io/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- vSphere -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/vmware" target="_blank">vSphere</a></h4>
+                        <p>Plataforma de virtualización que permite la gestión centralizada de máquinas virtuales,
+                            almacenamiento y redes en entornos de virtualización a gran escala.</p>
+                        <p><a href="https://github.com/vmware" target="_blank">Repositorio</a> | <a
+                                href="https://docs.vmware.com/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- LXC -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/lxc/lxc" target="_blank">LXC (Linux Containers)</a></h4>
+                        <p>Tecnología de contenedores para Linux que proporciona un entorno ligero para ejecutar
+                            aplicaciones en contenedores.</p>
+                        <p><a href="https://github.com/lxc/lxc" target="_blank">Repositorio</a> | <a
+                                href="https://linuxcontainers.org/" target="_blank">Documentación</a></p>
+                    </div>
+                    <!-- KVM -->
+                    <div class="tool-card">
+                        <h4><a href="https://github.com/virtio" target="_blank">KVM (Kernel-based Virtual Machine)</a>
+                        </h4>
+                        <p>Solución de virtualización para Linux, que permite ejecutar máquinas virtuales sobre hardware
+                            físico.</p>
+                        <p><a href="https://github.com/virtio" target="_blank">Repositorio</a> | <a
+                                href="https://www.linux-kvm.org/page/Documentation" target="_blank">Documentación</a>
+                        </p>
+                    </div>
+                    <button class="show-more-btn show-more" id="show-more-contenedores"
+                        onclick="toggleTools('contenedores')">
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>pwnVader</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
